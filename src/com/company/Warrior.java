@@ -1,6 +1,10 @@
 package com.company;
 
-public class Warrior extends Hero implements HavingSuperAbility{
+public class Warrior extends Hero{
+    public Warrior(int health, int damage, String superAbility) {
+        super(health, damage, superAbility);
+    }
+
     @Override
     public void applySuperAbility() {
         System.out.println("Warrior used ability: sharp sword");

@@ -3,18 +3,16 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-        Medic medic = new Medic();
-
-        Magic magic = new Magic();
-
-        Warrior warrior = new Warrior();
-
-        HavingSuperAbility[] abilities = {warrior, magic, medic};
-        for (int i = 0; i < abilities.length; i++) {
-            abilities[i].applySuperAbility();
-
+        Hero[] heroes = {
+                new Magic(100, 20, "Zero"),
+                new Medic(50, 0, "Heal", 50),
+                new Warrior(100, 20, "Hear"
+                )};
+        for (Hero hero : heroes) {
+            hero.applySuperAbility();
+            if (hero instanceof Medic) {
+                ((Medic) hero).increaseExperience();
+            }
         }
-
     }
-
 }
